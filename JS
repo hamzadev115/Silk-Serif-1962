@@ -1,0 +1,40 @@
+let mouse=document.querySelector("#cursor");
+let blr=document.querySelector("#blur");
+let menu=document.querySelectorAll("#nav a");
+let a=document.querySelectorAll("a");
+window.addEventListener("mousemove",function(details){
+    details.clientX;
+    details.clientY;
+
+    this.setTimeout(function(){
+    mouse.style.top=details.y +"px";
+    mouse.style.left=details.x +"px";
+    blr.style.top=details.y +"px";
+    blr.style.left=details.x +"px";
+    },100)
+})
+menu.forEach(function(hover){
+    hover.addEventListener("mouseenter",function(){
+        mouse.style.scale=1.5;
+    })
+    hover.addEventListener("mouseleave",function(){
+        mouse.style.scale=1;
+    })
+})
+a.forEach(function(hover){
+    hover.addEventListener("mouseenter",function(){
+        mouse.style.scale=1.5;
+    })
+    hover.addEventListener("mouseleave",function(){
+        mouse.style.scale=1;
+    })
+})
+$("#hero h1").textillate({
+    in:{
+        effect:'fadeInUp'
+    },
+    loop:true,
+    out:{
+        effect:'fadeOutRight'
+    }
+});
